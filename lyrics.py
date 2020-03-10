@@ -1,3 +1,6 @@
+#Code to get the lyrics of songs by a certain artist.
+#Input the url of the lyrics page and run the code to add that song to the database of lyrics the program
+
 import requests
 import pickle
 import string
@@ -13,13 +16,13 @@ url = 'https://www.metrolyrics.com/vertigo-lyrics-khalid.html'
 # url = 'https://www.metrolyrics.com/better-lyrics-khalid.html'
 # url = 'https://www.metrolyrics.com/suncity-lyrics-khalid.html'
 
-
 res = requests.get(url)
 html_page = res.content
 soup = BeautifulSoup(html_page, 'html.parser')
 text = soup.findAll("p", {"class": "verse"})
 songList = []
 song = ''
+#removes HTML attributes that we don't want to take from the webpage. 
 blacklist = [
 	'[document]',
 	'noscript',
@@ -36,7 +39,7 @@ for t in text:
 	if t.parent.name not in blacklist:
 		song += '{} '.format(t)
 
-#clean song lyrics
+#cleaning the song lyrics
 song = song.replace('<br/>','')
 song = song.replace('</p>','')
 song = song.replace('<p class="verse">','')
