@@ -1,0 +1,36 @@
+**Nikhil Anand Project 3 Reflection**
+
+**Project Overview**
+
+For my project I wanted to create a song generator that used previously released songs from the artist Khalid as its training/base data. For the purposes of this project I used all the songs from the EP "Suncity" to gather data that is from a singular, cohesive point of his artistry.
+
+I scraped the lyrics of the songs from the web, and ran a Markov Analysis to detect patterns and sentence structure to create a new original song as if it was written to be part of that album.
+
+**Implementation**
+
+In order to get all the lyrics from the album, I used Python's BeautifulSoup package as the main tool to  parse through the links of each song of the album. For each song, after parsing through the web page to get the lyrics I put into the discogs.txt file, and compiled all of the lyrics in a list of words.
+These words were then used in the Markov analysis to detect patterns in the order of words. For my Markov analysis, I created a dictionary with two word groups/pairs that followed each other. Finally, the program selected random words from the dictionary in an order that would create a new song (between 150-400 words long).
+
+This planning of this project directly related to the root of where the lyrics were coming from. I was choosing between Genius.com, azlyrics.com, and metrolyrics.com. I chose the later, metrolyrics as the way the HTML data was created was the easiest to read and parse for my program. It was then able collect the data easier through BeautifulSoup. From here the songs could reliably be pulled from the web and used for the project.
+
+**Results**
+
+Result Example (for more examples look at the No1_Singles.txt file):
+- you'd rather be falling with the road and wishing only know well like i do just speeding doing 60 in rubber bands and hope to see me pick it up and i'm thinking is running we're just friends but i swear to be than this is chorus i'm coming on the ground ooh now left right take it worse i to come overnight solo la ciudad de sol llévame donde deje mi corazón llévame donde deje mi corazón llévame llévame llévame llévame llévame llévamelo no time to wait i'll let the dark clouds i know that your parents don't care about what you gotta do nowhere that made me up and breathing was easy but i'm for the city break your parents don't be patient babe coming down the things that gray silverado you are i'm onto you like i swear when nobody's around you very soon llévame llévamelo solo la ciudad de sol llévame llévamelo solo la ciudad de sol llévame llévame donde deje mi corazón llévame donde deje mi corazón llévame llévame llévame llévame a dirty bathroom all this
+
+- can't let 'em see me in a ti don't care like i admit nothing feels better than this bridge now left right take it side to give up putting on my feet lift the motion chorus nothing feels better oh no room to give up and just take it comes with the meantime if i'm not i'm for me tonight come criticized who am i do nowhere like nothing feels better than this bridge now we're just friends but mine has been falling with the city break your parents don't care about what you calling me glowin' outro nothing feels better oh no tienes que llorar llévame llévame llévame llévamelo why you living riding this i've been falling with the motion chorus nothing feels better than this nothing feels better than this is chorus i'm so for me go i wish i do verse 1 love pull you like nothing feels better than this after the love with the dark no tienes que llorar llévame llévame donde deje mi corazón llévame donde deje mi corazón llévame llévamelo i to see me pick it up why you got plans wrapped in the moment see you like chorus i'm back lean you like i do do nowhere like that i admit nothing feels better often broken
+
+The code was able to generate lyrics for the song, based on the EP we chose to use. The lyrics were anywhere from 150 to 400 words, randomly picked. The lyrics don’t make much sense, but there are pockets where some logical lines were produced. Also bonus points for bilingual song creation.
+
+**Alignment** 
+
+When thinking about this project I wanted to see if it was possible to create a series of words that would resemble a song by some of my favorite artists. I knew it was possible, and could be done, I just didn’t realize how random word generation really is random, and not following the conventions and metaphors of great songwriting. My data sources, the lyrics from my base artist, Khalid, were extremely useful. I wanted to make a song that would resemble his writing, and getting his lyrics is like getting that information straight from the source. The thing that I had to look out for in my choice of where to get lyrics from is to make sure they were accurate. Having bad data would lead to inaccurate results, so I spent time to make sure it was verified and double confirmed to be the correct words. One big limitation of the data, and the project in general really, is the ability to detect delivery and metaphor in the lyrics. The project created words based on reliable data, but didn’t understand the context behind them, making the results less plausible.
+I found the data, and tools to get and analyze that data, was inline with what I was trying to accomplish. The data was pretty straightforward being the lyrics of previously released songs. The tools (BeautifulSoup, Markov Analysis, Request, etc.) worked quite well in pulling and analyzing the data. I would have liked the webpages were I was pulling the lyrics from to be a little more simple, so I could grab the information easier, but you can’t get everything you ask for. I’m confident that the lyrics generated were of sound quality based on the data that I gave my model. I wouldn’t go ahead and record these lyrics tomorrow, but with more training and data I think this could be a good tool to partner with a songwriter.  
+
+**Reflection**
+
+This was a fun project that I definitely learned a lot from. This was my first time parsing through web page source data and was a great foundation into how to use this for more complex or production level projects.
+
+I would have also loved to make this project more programmatic instead of having a lot of the “manual” processes I have now. I had the intention of being able to input the artists’ lyric page, album name, and then have my program handle the collection of all the lyrics. Sadly, website structure, knowledge and time constraints limited me from doing so. Instead I had to input the urls of all the songs I used and my program got the lyrics. This can be cumbersome for larger albums however. If I had more time I would have tried to finish my maximum viable product.
+
+Additionally, with more time to work I would have liked to try to have the lyrics make more sense, and follow a similar structure to a “typical” song as opposed to the block of text it Is now. This project was inspired by a [similar project](https://www.musicbusinessworldwide.com/artificial-intelligence-made-a-song-in-the-style-of-travis-scott-it-sounds-unnervingly-like-travis-scott/) done with the artist Travis Scott. After doing a mini-version I am even more impressed with what these people did, but also have a better understanding of how something like this can be done.
