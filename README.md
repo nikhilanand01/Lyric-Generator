@@ -19,6 +19,5 @@ Once the repo is cloned run the file markov.py by `python3 markov.py` and the ne
 
 To add more lyrics from a new text file, import the file and change the `lyric_base` in the `markov.py` file to the new file.
 
-
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

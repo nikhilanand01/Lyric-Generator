@@ -16,6 +16,9 @@ corpus = lyric_base.split()
 
 #function to give us all the pairs of words in the speeches
 def make_pairs(corpus):
+    """
+    Creates the pairs of words for a sequence
+    """
     for i in range(len(corpus)-1):
         yield (corpus[i], corpus[i+1])
 
